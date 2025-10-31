@@ -43,14 +43,14 @@ EpMap_CBCMS_plus/
 
 ## Installation
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone <repository-url>
 cd EpMap_CBCMS_plus
 ```
 
-2. Install dependencies
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -73,9 +73,13 @@ This command will execute the default training/evaluation pipeline as implemente
 1. Place your dataset under `data/raw/`.
 2. Follow the format described in `data/README.md` and the **annotation manual** `data/EpMap_Annotation_Manual.pdf`.
 
-- **text**: a legal clause or sentence.
-- **labels**: a serialized list of PDL tags associated with the clause.
+   - **text**: a legal clause or sentence.
 
+   - **labels**: a serialized list of PDL tags associated with the clause.
+
+
+> **Note:** The original legal text datasets used for EpMap training are not included in this repository due to licensing and jurisdictional restrictions.  
+> Instead, the provided annotation manual and schema definitions allow users to recreate equivalent datasets and reproduce all experiments consistently.
 > **Please read first:** `data/EpMap_Annotation_Manual.pdf` — it defines the PDL tag set, annotation rules, and examples.
 
 ## Output Files
@@ -106,12 +110,9 @@ python src/main.py
 
 ## Troubleshooting
 
-- **Model files**: Ensure RoBERTa weights are correctly placed under `roberta/roberta-base/`.
-- **Data format**: Verify that CSV columns match `text` and `labels` and labels are valid PDL tags per the manual.
-- **Dependencies**: Re-install via `pip install -r requirements.txt` if import errors occur.
-- **Paths**: Confirm that your working directory is the repo root when running `python src/main.py`.
+- Ensure RoBERTa weights are correctly placed under `roberta/roberta-base/`.
+- Verify that CSV columns match `text` and `labels` and labels are valid PDL tags per the manual.
+- Re-install via `pip install -r requirements.txt` if import errors occur.
+- Confirm that your working directory is the repo root when running `python src/main.py`.
 
-## Notes
-
-- The raw dataset is not included in this repository.
-- For accurate replication, **always** consult `data/EpMap_Annotation_Manual.pdf` before preparing data.
+For detailed annotation guidelines and data preparation instructions, refer to `data/EpMap_Annotation_Manual.pdf` .
